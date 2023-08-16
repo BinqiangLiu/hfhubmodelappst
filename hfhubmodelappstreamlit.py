@@ -19,7 +19,7 @@ Answer: Let's think step by step."""
 prompt = PromptTemplate(template=template, input_variables=["question"])
 
 #repo_id = "google/flan-t5-xxl"  # See https://huggingface.co/models?pipeline_tag=text-generation&sort=downloads for some other options
-repo_id = "HuggingFaceH4/starchat-beta" #能够运行，但app会自动天添加一些完全无关的问题并进行回答？
+model = "HuggingFaceH4/starchat-beta" #能够运行，但app会自动天添加一些完全无关的问题并进行回答？
 #repo_id = "meta-llama/Llama-2-70b-chat-hf" #Visit https://huggingface.co/meta-llama/Llama-2-70b-chat-hf to ask for access
 #repo_id = "tiiuae/falcon-7b" #这个LLM模型似乎是将问题逐字拆解进行QA问答？？？
 #https://huggingface.co/models位于huggingface的模型LLM
@@ -27,9 +27,9 @@ repo_id = "HuggingFaceH4/starchat-beta" #能够运行，但app会自动天添加
 #repo_id = "mosaicml/mpt-7b"
 #https://huggingface.co/blog/llama2#why-llama-2介绍了用于QA Chat的一些模型
 
-llm = HuggingFaceHub(repo_id=repo_id,
+llm = HuggingFaceHub(repo_id=model,
                      model_kwargs={"min_length":100,
-                                   "max_new_tokens":512,
+                                   "max_new_tokens":1024, "do_sample":True,
                                    "temperature":0.2,
                                    "top_k":50,
                                    "top_p":0.95, "eos_token_id":49155})
