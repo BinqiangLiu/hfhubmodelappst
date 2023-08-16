@@ -29,7 +29,7 @@ repo_id = "HuggingFaceH4/starchat-beta" #能够运行，但app会自动天添加
 
 llm = HuggingFaceHub(repo_id=repo_id,
                      model_kwargs={"min_length":100,
-                                   "max_new_tokens":1024,
+                                   "max_new_tokens":512,
                                    "temperature":0.2,
                                    "top_k":50,
                                    "top_p":0.95, "eos_token_id":49155})
