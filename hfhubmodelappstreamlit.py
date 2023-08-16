@@ -33,7 +33,6 @@ llm = HuggingFaceHub(repo_id=repo_id,
                                    "temperature":0.2,
                                    "top_k":50,
                                    "top_p":0.95, "eos_token_id":49155})
-                                   })
 
 llm_chain = LLMChain(prompt=prompt, llm=llm)
 response=llm_chain.run(question)
