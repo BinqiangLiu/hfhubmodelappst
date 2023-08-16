@@ -31,8 +31,8 @@ llm = HuggingFaceHub(repo_id=repo_id,
                      model_kwargs={"min_length":100,
                                    "max_new_tokens":1024,
                                    "temperature":0.2,
-#                                   "top_k":50,
-#                                   "top_p":0.95, "eos_token_id":49155})
+                                   "top_k":50,
+                                   "top_p":0.95, "eos_token_id":49155})
                                    })
 
 llm_chain = LLMChain(prompt=prompt, llm=llm)
